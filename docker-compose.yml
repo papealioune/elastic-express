@@ -1,0 +1,28 @@
+version: '2.2'
+services:
+  elastic_express:
+    image: elasticsearch:7.7.1
+    container_name: elasticsearch_expressjs
+    environment:
+      - node.name=elastic_express
+      - cluster.name=es-express
+      - cluster.initial_master_nodes=elastic_express
+      - bootstrap.memory_lock=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data02:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+
+volumes:
+  data02:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
