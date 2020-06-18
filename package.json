@@ -3,9 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "node data.js",
+    "test": "jest --config ./jest.config.json"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "elasticsearch": "^16.7.1",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
   }
 }

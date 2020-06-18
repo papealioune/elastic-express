@@ -1,4 +1,4 @@
-version: '2.2'
+version: '3'
 services:
   elastic_express:
     image: elasticsearch:7.7.1
@@ -14,6 +14,8 @@ services:
         hard: -1
     volumes:
       - data02:/usr/share/elasticsearch/data
+      - "./test:/__test__"
+    command: sh -c "node data.js & wait-for-it.sh localhost:9200 -- npm run test"
     ports:
       - 9200:9200
     networks:
