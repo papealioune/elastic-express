@@ -11,7 +11,7 @@
     "apollo-server-express": "^2.15.0",
     "body-parser": "^1.19.0",
     "elasticsearch": "^16.7.1",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "jest": "^26.0.1"
